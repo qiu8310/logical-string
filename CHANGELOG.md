@@ -1,3 +1,12 @@
+## [1.0.3](https://github.com/qiu8310/and-or/compare/v1.0.2...v1.0.3) (2024-10-11)
+
+
+### Features
+
+* 去掉 eval,改用 new Function ([bc67658](https://github.com/qiu8310/and-or/commit/bc6765845687116d2f04b04ee1a0bc9c3e48d225))
+
+
+
 ## [1.0.2](https://github.com/qiu8310/and-or/compare/v1.0.1...v1.0.2) (2024-10-01)
 
 
