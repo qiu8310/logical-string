@@ -13,8 +13,7 @@ export function parse(template: string, is: (key: string) => boolean): boolean {
     return `${!!is(key)}`
   })
   try {
-    /* eslint-disable-next-line */
-    return eval(expression)
+    return (new Function(`return ${expression}`))()
   } catch (e) {
     throw new Error(`Unexpected transform "${template}" => "${expression}"`)
   }
