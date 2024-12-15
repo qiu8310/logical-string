@@ -10,6 +10,11 @@ export function parse(template: string, is: (key: string) => boolean): boolean {
   const expression = template.replace(pattern, (r) => {
     const key = r.trim()
     if (!key) return '' // 有可能是在两个标签之间，如 `( a || b ) && c` 中 ")" 和 "&&" 之间也会匹配成功
+    if (key.startsWith('!')) {
+      const nextKey = key.substring(1)
+      if (!nextKey) return `false`
+      return `${!is(nextKey)}`
+    }
     return `${!!is(key)}`
   })
   try {

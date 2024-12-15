@@ -24,6 +24,13 @@ describe('parse', () => {
     expect(parse('( a || b ) && c', is)).toBe(false)
   })
 
+  it('logic 4', () => {
+    expect(parse('!', is)).toBe(false)
+    expect(parse('!a', is)).toBe(false)
+    expect(parse('!b', is)).toBe(true)
+    expect(parse('( !a || !b ) && !c', is)).toBe(true)
+  })
+
   it('error', () => {
     expect(() => {
       parse('a ( c', is)
